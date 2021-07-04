@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol ModalViewControllerProtocol: AnyObject {
+    func didSelectPrefecture(name: String)
+}
+
 class ModalViewController: UIViewController {
 
+    weak var delegate: ModalViewControllerProtocol?
+
     @IBAction func didTapCancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func didTapTokyoButton(_ sender: Any) {
@@ -30,11 +36,8 @@ class ModalViewController: UIViewController {
     }
 
     private func sendValue(value: String) {
+        delegate?.didSelectPrefecture(name: value)
 
-        let preVC = self.presentingViewController as? RootViewController
-        preVC?.label.text = value
-
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
-
 }
