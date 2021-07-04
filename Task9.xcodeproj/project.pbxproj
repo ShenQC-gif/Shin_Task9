@@ -14,7 +14,6 @@
 		EAAEA3E426814A9B008A0A4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAEA3E326814A9B008A0A4A /* Assets.xcassets */; };
 		EAAEA3E726814A9B008A0A4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAEA3E526814A9B008A0A4A /* LaunchScreen.storyboard */; };
 		EAAEA3F026814B90008A0A4A /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAEA3EF26814B90008A0A4A /* ModalViewController.swift */; };
-		EAAEA40C268A8B3B008A0A4A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EAAEA40B268A8B3B008A0A4A /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAAEA40C268A8B3B008A0A4A /* Info.plist in Resources */,
 				EAAEA3E726814A9B008A0A4A /* LaunchScreen.storyboard in Resources */,
 				EAAEA3E426814A9B008A0A4A /* Assets.xcassets in Resources */,
 				EAAEA3E226814A97008A0A4A /* Main.storyboard in Resources */,
