@@ -7,20 +7,23 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class RootViewController: UIViewController, UIViewControllerTransitioningDelegate, ModalViewProtocol {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var label: UILabel!
 
-        override func viewDidLoad() {
-            super.viewDidLoad()
-        }
+    func didSelectPrefecture(value: String) {
+        label.text = value
+    }
 
     @IBAction func didTapInputButton(_ sender: Any) {
 
-        let modalVC = self.storyboard?.instantiateViewController(withIdentifier: "modal")
-        modalVC!.modalPresentationStyle = .custom
-        modalVC!.transitioningDelegate = self
-        present(modalVC!, animated: true, completion: nil)
+        let navigationController = storyboard?.instantiateViewController(identifier: "modal") as? UINavigationController
+        navigationController?.modalPresentationStyle = .custom
+        navigationController?.transitioningDelegate = self
+        present(navigationController!, animated: true, completion: nil)
+
+        let modalVC = navigationController?.topViewController as? ModalViewController
+        modalVC?.delegate = self
 
     }
 
